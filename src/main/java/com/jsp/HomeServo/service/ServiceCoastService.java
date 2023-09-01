@@ -47,6 +47,7 @@ public ResponseEntity<ResponseStructure<ServiceCoast>> save(int work_id,int ven_
 			 Date end=work.getEndDate();
 			 Duration duration=Duration.between(start.toLocalDate().atStartOfDay(),end.toLocalDate().atStartOfDay());
 			  int  Days=(int) duration.toDays();
+			  ServiceCoast serviceCoast=new ServiceCoast();
 			   serviceCoast.setDays(Days);
 			   serviceCoast.setTotalAmount(Days*costperDay);
 			   ServiceCoast serviceCoast2=coastDao.saveServiceCoast(serviceCoast);
